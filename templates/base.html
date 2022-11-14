@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- <link rel="stylesheet" href="../static/style.css"> -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <br>
+            <center>
+                <h1>IR Chat App</h1>
+            </center><br>
+            <div style="float:left; width: 60%">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <div class="chatbox">
+                        <div class="chatbox__support">
+                            <div class="chatbox__header">
+                                <div class="chatbox__image--header">
+                                    <!-- <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image"> -->
+                                </div>
+                                <div class="chatbox__content--header">
+                                    <h4 class="chatbox__heading--header">Team: WebSpiders</h4>
+                                    <!-- <p class="chatbox__description--header">Hey, Chat with Me!</p> -->
+                                </div>
+                            </div>
+                            <div class="chatbox__messages">
+                                <div></div>
+                            </div>
+                            <div class="chatbox__footer">
+                                <input type="text" placeholder="Write a message...">
+                                <button class="chatbox__send--footer send__button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="selectoption">
+                    <select id="topics">
+                        <option value="All">All</option>
+                        <option value="politics">Politics</option>
+                        <option value="environment">Environment</option>
+                        <option value="technology">Technology</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                    </select>
+                </div>
+                <!-- <button id="btn">Get the Selected Value</button> -->
+            </div>
+            <div style="float:left; width: 40%">
+                <div class="statisticgraph">
+                    <div id='myDiv'></div>
+                    <div id="field2"></div>
+                </div>
+            </div>
+
+            <!-- <script>
+        $SCRIPT_ROOT = {{request.script_root|tojson}}; 
+    </script> -->
+            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>
